@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
 public class CommentDto {
+    private Long commentId;
     private Long postId;
     private Long userId;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss.SSS")
@@ -15,11 +16,20 @@ public class CommentDto {
     public CommentDto() {
     }
 
-    public CommentDto(Long postId, Long userId, LocalDateTime commentDate, String commentText) {
+    public CommentDto(Long commentId, Long postId, Long userId, LocalDateTime commentDate, String commentText) {
+        this.commentId = commentId;
         this.postId = postId;
         this.userId = userId;
         this.commentDate = commentDate;
         this.commentText = commentText;
+    }
+
+    public Long getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(Long commentId) {
+        this.commentId = commentId;
     }
 
     public Long getPostId() {
@@ -57,7 +67,8 @@ public class CommentDto {
     @Override
     public String toString() {
         return "CommentDto{" +
-                "postId=" + postId +
+                "commentId=" + commentId +
+                ", postId=" + postId +
                 ", userId=" + userId +
                 ", commentDate=" + commentDate +
                 ", commentText='" + commentText + '\'' +

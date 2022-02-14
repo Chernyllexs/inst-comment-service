@@ -1,9 +1,8 @@
 package com.chernyllexs.comments.controller;
 
 import com.chernyllexs.comments.model.CommentDto;
-import com.chernyllexs.comments.service.CommentServiceImpl;
+import com.chernyllexs.comments.service.implementation.CommentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,14 +20,31 @@ public class CommentController {
         return ResponseEntity.ok(commentService.addComment(commentDto));
     }
 
-    @GetMapping
-    public List<CommentDto> getAllComments(){
-        return commentService.getAllComments();
+    @GetMapping("/get-all-comment-for-post/{postId}")
+    public List<CommentDto> getAllCommentsForPost(@PathVariable Long postId){
+        return commentService.getAllCommentsByPostId(postId);
     }
 
-    @GetMapping("/getComment/{id}")
-    public ResponseEntity<List<CommentDto>> getCommentByPostId(@PathVariable Long id){
-        return ResponseEntity.ok(commentService.getCommentsByPostId(id));
+    @GetMapping("/get-five-last-comment-for-post/{postId}")
+    public List<CommentDto> getLastFiveCommentsForPost(@PathVariable Long postId){
+        return commentService.getFiveLastCommentsByPostId(postId);
     }
+
+    @DeleteMapping("/delete-all-user-comments/{userId}")
+    public void deleteAllUserComments(@PathVariable Long userId){
+        commentService.deleteAllUserComments(userId);
+    }
+
+    @DeleteMapping("/delete-all-comments-for-post/{postId}")
+    public void deleteAllCommentsByPostId(@PathVariable Long postId){
+        commentService.deleteAllCommentsByPostId(postId);
+    }
+
+    @DeleteMapping("/delete-comment/{commentId}")
+    public void deleteComment(@PathVariable Long commentId){
+        commentService.deleteComment(commentId);
+    }
+
+
 
 }
