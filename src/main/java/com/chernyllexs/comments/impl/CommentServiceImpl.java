@@ -1,11 +1,11 @@
-package com.chernyllexs.comments.service.implementation;
+package com.chernyllexs.comments.impl;
 
-import com.chernyllexs.comments.entity.CommentEntity;
-import com.chernyllexs.comments.model.CommentDto;
-import com.chernyllexs.comments.repository.CommentRepository;
-import com.chernyllexs.comments.service.CommentService;
-import com.chernyllexs.comments.service.PostService;
-import com.chernyllexs.comments.utill.exception.PostNotFoundException;
+import com.chernyllexs.comments.model.entity.CommentEntity;
+import com.chernyllexs.comments.model.dto.CommentDto;
+import com.chernyllexs.comments.api.CommentRepository;
+import com.chernyllexs.comments.api.CommentService;
+import com.chernyllexs.comments.api.PostService;
+import com.chernyllexs.comments.api.exception.PostNotFoundException;
 import com.chernyllexs.comments.utill.mapper.CommentMapper;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,11 +45,11 @@ public class CommentServiceImpl implements CommentService {
         return Lists.reverse(listMapper(commentRepository.getFiveLastCommentsByPostId(postId)));
     }
 
-    @Override
-    @Transactional
-    public void deleteAllUserComments(Long userId) {
-        commentRepository.deleteByUserId(userId);
-    }
+//    @Override
+//    @Transactional
+//    public void deleteAllUserComments(Long userId) {
+//        commentRepository.deleteByUserId(userId);
+//    }
 
     @Override
     @Transactional

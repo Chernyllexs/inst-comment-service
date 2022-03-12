@@ -1,4 +1,4 @@
-package com.chernyllexs.comments.utill.exception;
+package com.chernyllexs.comments.api.exception;
 
 public class PostNotFoundException extends RuntimeException {
 

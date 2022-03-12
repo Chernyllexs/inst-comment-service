@@ -1,7 +1,7 @@
 package com.chernyllexs.comments.utill.mapper;
 
-import com.chernyllexs.comments.entity.CommentEntity;
-import com.chernyllexs.comments.model.CommentDto;
+import com.chernyllexs.comments.model.entity.CommentEntity;
+import com.chernyllexs.comments.model.dto.CommentDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

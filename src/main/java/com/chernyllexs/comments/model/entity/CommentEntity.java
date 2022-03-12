@@ -1,22 +1,32 @@
-package com.chernyllexs.comments.model;
+package com.chernyllexs.comments.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
+import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 
-public class CommentDto {
+@Entity
+@Table(name = "comments", schema = "PUBLIC")
+public class CommentEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "comment_id")
     private Long commentId;
+
+    @Column(name = "post_id")
     private Long postId;
+
+    @Column(name = "user_id")
     private Long userId;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+
+    @Column(name = "comment_created", updatable = false)
     private LocalDateTime commentDate;
+
+    @Column(name = "comment_text")
     private String commentText;
 
-    public CommentDto() {
+    public CommentEntity() {
     }
 
-    public CommentDto(Long commentId, Long postId, Long userId, LocalDateTime commentDate, String commentText) {
+    public CommentEntity(Long commentId, Long postId, Long userId, LocalDateTime commentDate, String commentText) {
         this.commentId = commentId;
         this.postId = postId;
         this.userId = userId;
@@ -66,7 +76,7 @@ public class CommentDto {
 
     @Override
     public String toString() {
-        return "CommentDto{" +
+        return "CommentEntity{" +
                 "commentId=" + commentId +
                 ", postId=" + postId +
                 ", userId=" + userId +

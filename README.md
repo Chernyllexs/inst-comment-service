@@ -11,7 +11,7 @@
 
 
 #### Endpoints:
-* POST /comment (add a comment for this post);
+* POST /comment/create-comment (add a comment for this post);
 * GET /comment/get-all-comment-for-post/{postId};
 * GET /comment/get-five-last-comment-for-post/{postId};
 * DELETE /comment/delete-all-user-comments/{userId};
