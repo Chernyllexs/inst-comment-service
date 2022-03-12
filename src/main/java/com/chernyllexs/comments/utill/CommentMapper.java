@@ -1,4 +1,4 @@
-package com.chernyllexs.comments.utill.mapper;
+package com.chernyllexs.comments.utill;
 
 import com.chernyllexs.comments.model.entity.CommentEntity;
 import com.chernyllexs.comments.model.dto.CommentDto;

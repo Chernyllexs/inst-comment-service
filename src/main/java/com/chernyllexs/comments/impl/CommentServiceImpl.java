@@ -6,7 +6,7 @@ import com.chernyllexs.comments.api.CommentRepository;
 import com.chernyllexs.comments.api.CommentService;
 import com.chernyllexs.comments.api.PostService;
 import com.chernyllexs.comments.api.exception.PostNotFoundException;
-import com.chernyllexs.comments.utill.mapper.CommentMapper;
+import com.chernyllexs.comments.utill.CommentMapper;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

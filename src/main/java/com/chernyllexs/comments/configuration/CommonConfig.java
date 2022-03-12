@@ -20,12 +20,4 @@ public class CommonConfig {
         return mapper;
     }
 
-    /*@Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis((Predicate<RequestHandler>) RequestHandlerSelectors.any())
-                .paths((Predicate<String>) PathSelectors.any())
-                .build();
-    }*/
 }
