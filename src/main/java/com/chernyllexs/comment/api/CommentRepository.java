@@ -12,8 +12,7 @@ public interface CommentRepository extends CrudRepository<CommentEntity, Long> {
     @Query(value = "SELECT * FROM comments c WHERE c.post_id = :id ORDER BY c.comment_created DESC LIMIT 5", nativeQuery = true)
     Iterable<CommentEntity> getFiveLastCommentsByPostId(@Param("id") Long id);
 
-    Long deleteByUserId(Long userId);
-
     Long deleteByPostId(Long postId);
 
+    Long deleteByCommentId(Long commentId);
 }
