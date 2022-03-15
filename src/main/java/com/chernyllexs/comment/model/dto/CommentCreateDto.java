@@ -1,8 +1,4 @@
-package com.chernyllexs.comments.model.dto;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import java.time.LocalDateTime;
+package com.chernyllexs.comment.model.dto;
 
 public class CommentCreateDto {
     private Long postId;

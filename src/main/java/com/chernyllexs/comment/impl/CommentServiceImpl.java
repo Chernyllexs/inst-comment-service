@@ -1,12 +1,12 @@
-package com.chernyllexs.comments.impl;
+package com.chernyllexs.comment.impl;
 
-import com.chernyllexs.comments.model.entity.CommentEntity;
-import com.chernyllexs.comments.model.dto.CommentDto;
-import com.chernyllexs.comments.api.CommentRepository;
-import com.chernyllexs.comments.api.CommentService;
-import com.chernyllexs.comments.api.PostService;
-import com.chernyllexs.comments.api.exception.PostNotFoundException;
-import com.chernyllexs.comments.utill.CommentMapper;
+import com.chernyllexs.comment.model.entity.CommentEntity;
+import com.chernyllexs.comment.model.dto.CommentDto;
+import com.chernyllexs.comment.api.CommentRepository;
+import com.chernyllexs.comment.api.CommentService;
+import com.chernyllexs.comment.api.PostService;
+import com.chernyllexs.comment.api.exception.PostNotFoundException;
+import com.chernyllexs.comment.api.mapper.CommentMapper;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

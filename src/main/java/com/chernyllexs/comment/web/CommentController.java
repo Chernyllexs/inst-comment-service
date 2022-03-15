@@ -1,8 +1,8 @@
-package com.chernyllexs.comments.web;
+package com.chernyllexs.comment.web;
 
-import com.chernyllexs.comments.model.dto.CommentCreateDto;
-import com.chernyllexs.comments.model.dto.CommentDto;
-import com.chernyllexs.comments.api.CommentService;
+import com.chernyllexs.comment.model.dto.CommentCreateDto;
+import com.chernyllexs.comment.model.dto.CommentDto;
+import com.chernyllexs.comment.api.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

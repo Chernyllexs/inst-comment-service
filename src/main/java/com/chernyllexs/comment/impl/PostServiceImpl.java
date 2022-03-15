@@ -1,7 +1,7 @@
-package com.chernyllexs.comments.impl;
+package com.chernyllexs.comment.impl;
 
-import com.chernyllexs.comments.api.PostService;
-import com.chernyllexs.comments.api.exception.PostNotFoundException;
+import com.chernyllexs.comment.api.PostService;
+import com.chernyllexs.comment.api.exception.PostNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.ServiceInstance;

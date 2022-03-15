@@ -1,6 +1,6 @@
-package com.chernyllexs.comments.api;
+package com.chernyllexs.comment.api;
 
-import com.chernyllexs.comments.model.dto.CommentDto;
+import com.chernyllexs.comment.model.dto.CommentDto;
 
 import java.util.List;
 

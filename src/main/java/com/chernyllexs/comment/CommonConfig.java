@@ -1,4 +1,4 @@
-package com.chernyllexs.comments.configuration;
+package com.chernyllexs.comment;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;

@@ -1,4 +1,4 @@
-package com.chernyllexs.comments.api.exception;
+package com.chernyllexs.comment.api.exception;
 
 public class CommentException extends RuntimeException {
     public CommentException(String message) {

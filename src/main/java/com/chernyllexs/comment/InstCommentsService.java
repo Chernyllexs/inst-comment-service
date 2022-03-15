@@ -1,4 +1,4 @@
-package com.chernyllexs.comments;
+package com.chernyllexs.comment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

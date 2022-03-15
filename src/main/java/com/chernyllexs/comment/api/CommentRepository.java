@@ -1,6 +1,6 @@
-package com.chernyllexs.comments.api;
+package com.chernyllexs.comment.api;
 
-import com.chernyllexs.comments.model.entity.CommentEntity;
+import com.chernyllexs.comment.model.entity.CommentEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
