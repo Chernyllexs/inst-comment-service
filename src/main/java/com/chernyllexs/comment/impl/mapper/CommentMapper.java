@@ -1,4 +1,4 @@
-package com.chernyllexs.comment.api.mapper;
+package com.chernyllexs.comment.impl.mapper;
 
 import com.chernyllexs.comment.model.entity.CommentEntity;
 import com.chernyllexs.comment.model.dto.CommentDto;
