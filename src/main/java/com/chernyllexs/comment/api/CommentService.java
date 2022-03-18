@@ -1,25 +1,21 @@
 package com.chernyllexs.comment.api;
 
 import com.chernyllexs.comment.model.dto.CommentDto;
-import com.chernyllexs.comment.model.entity.CommentEntity;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import com.chernyllexs.comment.model.dto.PagingCommentDto;
 
 import java.util.List;
 
 public interface CommentService {
 
-    public CommentDto addComment(CommentDto commentDto);
+    CommentDto addComment(CommentDto commentDto);
 
-    public List<CommentDto> getAllCommentsByPostId(Long postId);
+    List<CommentDto> getAllCommentsByPostId(Long postId);
 
-    public List<CommentDto> getFiveLastCommentsByPostId(Long postId);
+    List<CommentDto> getFiveLastCommentsByPostId(Long postId);
 
-    public void deleteAllCommentsByPostId(Long postId);
+    void deleteAllCommentsByPostId(Long postId);
 
-    public void deleteComment(Long commentId);
+    void deleteComment(Long commentId);
 
-
-
-
+    PagingCommentDto getPaginated(int pageNo, int pageSize, Long postId);
 }

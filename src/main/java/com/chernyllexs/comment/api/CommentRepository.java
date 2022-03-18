@@ -1,11 +1,13 @@
 package com.chernyllexs.comment.api;
 
 import com.chernyllexs.comment.model.entity.CommentEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-public interface CommentRepository extends CrudRepository<CommentEntity, Long> {
+public interface CommentRepository extends JpaRepository<CommentEntity, Long> {
 
     Iterable<CommentEntity> findByPostIdOrderByCommentDate(Long id);
 
@@ -15,4 +17,7 @@ public interface CommentRepository extends CrudRepository<CommentEntity, Long> {
     Long deleteByPostId(Long postId);
 
     Long deleteByCommentId(Long commentId);
+
+    Page<CommentEntity> findByPostId(Long postId, Pageable pageable);
+
 }
