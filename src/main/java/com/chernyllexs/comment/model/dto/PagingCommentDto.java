@@ -3,8 +3,9 @@ package com.chernyllexs.comment.model.dto;
 import java.util.List;
 
 public class PagingCommentDto {
-    private int numberOfPages;
+    private int commentsPerPage;
     private int currentPage;
+    private Long numberOfComments;
     private List<CommentDto> comments;
 
     private PagingCommentDto() {
@@ -14,15 +15,19 @@ public class PagingCommentDto {
         return new PagingCommentDto().new Builder();
     }
 
-    public int getNumberOfPages() {
-        return numberOfPages;
+    public int getCommentsPerPage() {
+        return commentsPerPage;
     }
 
     public int getCurrentPage() {
         return currentPage;
     }
 
-    public List<CommentDto> getPosts() {
+    public Long getNumberOfComments() {
+        return numberOfComments;
+    }
+
+    public List<CommentDto> getComments() {
         return comments;
     }
 
@@ -33,24 +38,28 @@ public class PagingCommentDto {
 
         PagingCommentDto that = (PagingCommentDto) o;
 
-        if (getNumberOfPages() != that.getNumberOfPages()) return false;
+        if (getCommentsPerPage() != that.getCommentsPerPage()) return false;
         if (getCurrentPage() != that.getCurrentPage()) return false;
-        return getPosts() != null ? getPosts().equals(that.getPosts()) : that.getPosts() == null;
+        if (getNumberOfComments() != null ? !getNumberOfComments().equals(that.getNumberOfComments()) : that.getNumberOfComments() != null)
+            return false;
+        return getComments() != null ? getComments().equals(that.getComments()) : that.getComments() == null;
     }
 
     @Override
     public int hashCode() {
-        int result = getNumberOfPages();
+        int result = getCommentsPerPage();
         result = 31 * result + getCurrentPage();
-        result = 31 * result + (getPosts() != null ? getPosts().hashCode() : 0);
+        result = 31 * result + (getNumberOfComments() != null ? getNumberOfComments().hashCode() : 0);
+        result = 31 * result + (getComments() != null ? getComments().hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "PagingCommentDto{" +
-                "numberOfPages=" + numberOfPages +
+                "commentsPerPage=" + commentsPerPage +
                 ", currentPage=" + currentPage +
+                ", numberOfComments=" + numberOfComments +
                 ", comments=" + comments +
                 '}';
     }
@@ -60,8 +69,8 @@ public class PagingCommentDto {
         private Builder() {
         }
 
-        public Builder setNumberOfPages(int numberOfPages) {
-            PagingCommentDto.this.numberOfPages = numberOfPages;
+        public Builder setCommentsPerPage(int numberOfPages) {
+            PagingCommentDto.this.commentsPerPage = numberOfPages;
             return this;
         }
 
@@ -70,7 +79,12 @@ public class PagingCommentDto {
             return this;
         }
 
-        public Builder setPosts(List<CommentDto> comments) {
+        public Builder setNumberOfComments(Long NumberOfComments) {
+            PagingCommentDto.this.numberOfComments = NumberOfComments;
+            return this;
+        }
+
+        public Builder setComments(List<CommentDto> comments) {
             PagingCommentDto.this.comments = comments;
             return this;
         }

@@ -31,15 +31,15 @@ public class CommentController {
         return commentService.query(condition,new PageRequest(page,size, Sort.by("")));
     }*/
 
-    @GetMapping("/get-paginated/{postId}/{pageNo}/{pageSize}")
-    public ResponseEntity<PagingCommentDto> getPaginatedPost(
+    @GetMapping({"/get-paginated/{postId}", "/get-paginated/{postId}/{pageNo}", "/get-paginated/{postId}/{pageNo}/{pageSize}"})
+    public ResponseEntity<PagingCommentDto> getPaginatedComment(
             @PathVariable(name = "postId") Long postId,
             @PathVariable(name = "pageNo", required = false) Integer pageNo,
-            @PathVariable(name = "pageSize",required = false) Integer pageSize) {
-        if (pageNo.equals(null))
-            pageNo = new Integer(0);
-        if (pageSize.equals(null))
-            pageSize = new Integer(5);
+            @PathVariable(name = "pageSize", required = false) Integer pageSize) {
+        if (pageNo == null)
+            pageNo = 0;
+        if (pageSize == null)
+            pageSize = 5;
         return ResponseEntity.ok().body(commentService.getPaginated(pageNo, pageSize, postId));
     }
 

@@ -81,8 +81,9 @@ public class CommentServiceImpl implements CommentService {
 
         PagingCommentDto pagingCommentDto = PagingCommentDto.newBuilder()
                 .setCurrentPage(pageNo)
-                .setNumberOfPages(pagedResult.getTotalPages())
-                .setPosts(commentMapper.convertListToDto(pagedResult.toList()))
+                .setCommentsPerPage(pageSize)
+                .setNumberOfComments(commentRepository.countByPostId(postId))
+                .setComments(commentMapper.convertListToDto(pagedResult.toList()))
                 .build();
         return pagingCommentDto;
     }

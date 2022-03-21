@@ -18,6 +18,8 @@ public interface CommentRepository extends JpaRepository<CommentEntity, Long> {
 
     Long deleteByCommentId(Long commentId);
 
+    Long countByPostId(Long postId);
+
     Page<CommentEntity> findByPostId(Long postId, Pageable pageable);
 
 }
